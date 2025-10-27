@@ -1,0 +1,16 @@
+1.ubuntu - redhat - kali
+2.used for showing commands documentation
+3.rm for files --- rmdir for directory
+4.
+a.cant remove because it wasnot empty -- had to rm with -r
+b.failed because its a file
+c./home/abdo/docs/mycv 
+5.done cp etc/passwd password
+6.done mv ~/mypassword ~/oldpasswrd
+7.
+1.cd 
+2.cd ~ 
+3.cd/home/user
+4.cd $home
+8.ls /usr/bin/w*
+

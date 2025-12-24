@@ -1,0 +1,1 @@
+/home/abdo/x-tools/aarch64-rpi3-linux-gnu/bin/aarch64-rpi3-linux-gnu-g++ CMakeFiles/program.dir/main.cpp.o -o program  libmylib.a 

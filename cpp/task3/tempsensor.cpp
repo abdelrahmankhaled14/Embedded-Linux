@@ -40,7 +40,8 @@ void displayTemperature(const std::shared_ptr<TemperatureData>& data) {
 }
 
 /* ================= LOGGER ================= */
-void logTemperature(const std::shared_ptr<TemperatureData>& data) {
+void logTemperature(const std::shared_ptr<TemperatureData>& data)
+{
     std::ofstream file(LOG_FILE, std::ios::app);
     file << getTimeStamp()<< "Humidity = "<< data->value<< std::endl;
 }

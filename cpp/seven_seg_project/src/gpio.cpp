@@ -9,9 +9,10 @@ namespace Mcal
 {
     namespace Gpio
     {
+
         Gpio::Gpio()
         {
-            // Default constructor
+            std::cout <<"gpio coonstructor"<< std::endl;
         }
         Gpio::Gpio(int pin)
         {
@@ -26,6 +27,7 @@ namespace Mcal
             }
             write(fdExport, num_str.c_str(), num_str.size());
             close(fdExport);
+            sleep(1);
             pathDir = "/sys/class/gpio/gpio" + std::to_string(num) + "/direction";
             fdDir = open(pathDir.c_str(), O_WRONLY);
             if (fdDir < 0)
@@ -43,6 +45,7 @@ namespace Mcal
         }
         Gpio::Gpio(int pin, std::string direction)
         {
+            std::cout << "Initializing GPIO " << pin << " as " << direction << std::endl;
             this->num = pin + 512;
             std::string num_str = std::to_string(num);
             pathExport = "/sys/class/gpio/export";

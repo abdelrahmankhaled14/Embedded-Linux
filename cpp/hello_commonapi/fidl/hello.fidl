@@ -1,0 +1,34 @@
+package bootloader.methods
+
+interface bootloader2
+{
+    
+    version { major 1 minor 0 }
+
+    method requestDownload 
+    {
+        out
+        {
+            Boolean done
+            Int32 fileSize
+        }
+    }
+    method requestData
+    {
+        in
+        {
+            Int32 size
+        }
+        out
+        {
+            String data
+        }
+    }
+    broadcast change
+     {
+        out
+        {
+            String appversion  
+        }
+    }
+}

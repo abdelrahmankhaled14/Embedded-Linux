@@ -1,0 +1,37 @@
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "hello.fidl"
+
+define org.genivi.commonapi.someip.deployment for interface bootloader.methods.bootloader2 
+{
+   
+    SomeIpServiceID = 4666
+    broadcast change
+    {
+        SomeIpEventID = 2
+        SomeIpEventGroups = {7000}
+        SomeIpReliable = false
+    }
+    method requestDownload
+    {
+        SomeIpMethodID = 0
+        SomeIpReliable = false
+    }
+    method requestData
+    {
+        SomeIpMethodID = 1
+        SomeIpReliable = false
+    }
+    
+}
+
+define org.genivi.commonapi.someip.deployment for provider as Service {
+    instance bootloader.methods.bootloader2 {
+        InstanceId = "bootloader.methods.justSendHi"
+        
+        SomeIpInstanceID = 22136
+    
+        SomeIpUnicastAddress = "127.0.0.1"
+        SomeIpReliableUnicastPort = 30499
+        SomeIpUnreliableUnicastPort = 30499
+    }
+}

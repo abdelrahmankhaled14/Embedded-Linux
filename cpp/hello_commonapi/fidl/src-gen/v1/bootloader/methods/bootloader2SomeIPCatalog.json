@@ -1,0 +1,8 @@
+{
+    "bootloader.methods.bootloader2" : {
+        "service_id": 4666,
+        "instances" : {
+            "bootloader.methods.justSendHi": 22136
+        }
+    }
+}
